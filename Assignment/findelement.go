@@ -1,4 +1,4 @@
-package Assignment
+package assignment
 
 func numInArray(list []int, n int) bool {
 
