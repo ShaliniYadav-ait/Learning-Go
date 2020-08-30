@@ -32,6 +32,13 @@ func Test_reverseString(t *testing.T) {
 			},
 			want : "",
 		},
+		{
+			name : "nihongo",
+			args : args{
+				input : "日本語",
+			},
+			want : "語本日",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
