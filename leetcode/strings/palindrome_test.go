@@ -33,9 +33,40 @@ func Test_validPalindrome(t *testing.T) {
 			want: false,
 		},
 		{
-			name: "is not palindrome",
+			name: "is a palindrome",
 			args: args{
 				s: "abdba",
+			},
+			want: true,
+		},
+		{
+			name: "nihogo palindrome",
+			args: args{
+				s: "日本語本日",
+			},
+			want: true,
+
+		},
+		{
+			name: "nihogo 2nd palindrome",
+			args: args{
+				s: "日本本語本日",
+			},
+			want: true,
+			
+		},
+		{
+			name: "nihogo not palindrome",
+			args: args{
+				s: "日本語",
+			},
+			want: false,
+			
+		},
+		{
+			name: "deee",
+			args: args{
+				s: "deee",
 			},
 			want: true,
 		},

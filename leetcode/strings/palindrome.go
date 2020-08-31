@@ -1,20 +1,29 @@
 package leetcode
 
 func validPalindrome(s string) bool {
-	var pal bool
-	len := len(s)
-	totallen := len/2 + 1
-len--
+	var palindrome bool
+	count := 1
+	r := []rune(s)
 
-	for i := 0; i < (len / 2); i++ {
-		if s[i] == s[totallen] && i <= (len/2) {
-			pal = true
-			totallen--
-			continue
-		} else {
-			pal = false
-		}
+	palindrome = checkPalindrome(r, count)
+
+	return palindrome
+}
+
+func checkPalindrome(r []rune, count int) bool {
+
+	size := len(r)
+	last := size - 1
+
+	if size <= 1{
+		return true
 	}
 
-	return pal
+	if r[0] == r[last] {
+		return checkPalindrome(r[1:last], count)
+	} else if count > 0 {
+		return checkPalindrome(r[0:last], count-1) || checkPalindrome(r[1:last+1], count-1)
+	}
+	return false
+
 }
