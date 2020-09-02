@@ -1,6 +1,6 @@
 package assignment
 
-func decitobase(number int, base int,digits []string) string {
+func decimalToAnyBase(number int, base int,digits []string) string {
 var conversion string
 
 if number == 0{

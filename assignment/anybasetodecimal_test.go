@@ -2,76 +2,76 @@ package assignment
 
 import "testing"
 
-func Test_decimaltoanybase(t *testing.T) {
+func Test_anyBaseToDecimal(t *testing.T) {
 	type args struct {
-		dividend int
-		divisor  int
+		s      string
+		base   int
 		digits []string
 	}
 	tests := []struct {
 		name string
 		args args
-		want string
+		want int
 	}{
 		{
-			name: "base 10 to base 2",
+			name: "base 2 to base 10",
 			args: args{
-				dividend: 13,
-				divisor:  2,
+				s: "1101",
+				base: 2,
 				digits : []string {"0","1"},
 			},
-			want: "1101",
+			want: 13,
 		},
 		{
-			name: "2nd case base 10 to base 2",
+			name: "2nd case base 2 to base 10",
 			args: args{
-				dividend: 4,
-				divisor:  2,
+				s: "100",
+				base:  2,
 				digits : []string {"0","1"},
 			},
-			want: "100",
+			want: 4,
 		},
 		{
 			name: "case base 10 to base 10",
 			args: args{
-				dividend: 255,
-				divisor:  10,
+				s: "255",
+				base:  10,
 				digits : []string {"0","1","2","3","4","5","6","7","8","9"},
 			},
-			want: "255",
+			want: 255,
 		},
 		{
-			name: "case base 10 to base 3",
+			name: "case base 3 to base 10 ",
 			args: args{
-				dividend: 15,
-				divisor:  3,
+				s : "120",
+				base: 3,
 				digits : []string {"0","1","2"},
 			},
-			want: "120",
+			want: 15,
 		},
 		{
 			name: "case 0",
 			args: args{
-				dividend: 0,
-				divisor:  2,
+				s: "0",
+				base:  2,
 				digits : []string {"0","1"},
 			},
-			want: "0",
+			want: 0,
 		},
 		{
-			name: "case base 10 to base 16",
+			name: "case base 16 to base 10",
 			args: args{
-				dividend: 255,
-				divisor:  16,
+				s: "FF",
+				base : 16,
 				digits : []string {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"},
 			},
-			want: "FF",
+			want: 255,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := decimalToAnyBase(tt.args.dividend, tt.args.divisor, tt.args.digits); got != tt.want {
-				t.Errorf("decimalToAnyBase() = %v, want %v", got, tt.want)
+			if got := anyBaseToDecimal(tt.args.s, tt.args.base, tt.args.digits); got != tt.want {
+				t.Errorf("anybasetodecimal() = %v, want %v", got, tt.want)
 			}
 		})
 	}
