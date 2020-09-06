@@ -1,0 +1,3 @@
+package assignment
+
+func test(){}
