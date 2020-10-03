@@ -1,2 +1,2 @@
 # Learning-Go
-In this repository I will be keeping all the projects of Golang
+This Repository contains Data Structures and Algorithms practice problems which I have worked on while learning Golang.
