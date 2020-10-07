@@ -4,24 +4,22 @@ import (
 	"strconv"
 )
 
-func fizzbuzz(n int) string {
+// https://leetcode.com/problems/fizz-buzz/
+func fizzbuzz(n int) []string {
 
-	var s string
+    s := make([]string, n)
 	for i := 1; i <= n; i++ {
 
 		if i%3 == 0 && i%5 == 0 {
-			s = s + "FIZZ BUZZ"
+			s[i-1] =  "FIZZBUZZ"
 		} else if i%3 == 0 {
-			s = s + "FIZZ"
+			s[i-1] = "FIZZ"
 		} else if i%5 == 0 {
-			s = s + "BUZZ"
+			s[i-1] = "BUZZ"
 		} else {
-			s = s + strconv.Itoa(i)
+			s[i-1] = strconv.Itoa(i) 
 		}
 
-		if i < n {
-			s = s + ","
-		}
 	}
 	return s
 }

@@ -12,21 +12,21 @@ func Test_fizzbuzz(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want string
+		want []string
 	}{
 		{
 			name: "print number till 10",
 			args: args{
 				n: 10,
 			},
-			want: "1,2,FIZZ,4,BUZZ,FIZZ,7,8,FIZZ,BUZZ",
+			want: []string{"1","2","FIZZ","4","BUZZ","FIZZ","7","8","FIZZ","BUZZ"},
 		},
 		{
 			name: "print number till 15",
 			args: args{
 				n: 15,
 			},
-			want: "1,2,FIZZ,4,BUZZ,FIZZ,7,8,FIZZ,BUZZ,11,FIZZ,13,14,FIZZ BUZZ",
+			want: []string{"1","2","FIZZ","4","BUZZ","FIZZ","7","8","FIZZ","BUZZ","11","FIZZ","13","14","FIZZBUZZ"},
 		},
 	}
 	for _, tt := range tests {
