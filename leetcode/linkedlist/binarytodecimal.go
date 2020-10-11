@@ -1,6 +1,6 @@
 package linkedlist
 
-func getDecimalValue(head *ListNode) int {
+/* func getDecimalValue(head *ListNode) int {
 	
 	var s string
 	for head != nil{
@@ -42,3 +42,4 @@ func recursivePower(base int, exponent int) int {
 	}
 	return 1
 }
+ */
