@@ -1,5 +1,6 @@
-package leetcode
+package strings
 
+//https://leetcode.com/problems/valid-palindrome-ii/
 func validPalindrome(s string) bool {
 	var palindrome bool
 	count := 1

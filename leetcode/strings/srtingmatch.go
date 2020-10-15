@@ -1,5 +1,6 @@
-package leetcode
+package strings
 
+// https://leetcode.com/problems/di-string-match/
 func diStringMatch(s string) []int {
 	i:= 0
 	min := 0
