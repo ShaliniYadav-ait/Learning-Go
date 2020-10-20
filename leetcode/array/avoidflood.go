@@ -1,5 +1,6 @@
 package array
 
+//https://leetcode.com/problems/avoid-flood-in-the-city/
 func avoidFlood(rains []int) []int {
 
 	lakes := make(map[int]int)
@@ -27,7 +28,7 @@ func avoidFlood(rains []int) []int {
 				break
 			}
 		}
-		
+
 		if lakes[rains[i]] != i {
 			return []int{}
 		}
