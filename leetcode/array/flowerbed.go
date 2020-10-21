@@ -3,6 +3,33 @@ package array
 //https://leetcode.com/problems/can-place-flowers/
 func canPlaceFlowers(flowerbed []int, n int) bool {
 
+	if n == 0 {
+		return true
+	}
+
+	count := 0
+	for i := 0; i < len(flowerbed); i++ {
+		Previous, Next := 0, 0
+		if i > 0 && i < len(flowerbed)-1 {
+			Previous = i - 1
+			Next = i + 1
+		}
+
+		if flowerbed[Previous]+flowerbed[i]+flowerbed[Next] == 0 {
+			i++
+			count++
+		}
+
+		if count == n {
+			return true
+		}
+
+	}
+	return false
+
+}
+
+/*
 	if len(flowerbed) == 0 {
 		return false
 	}
@@ -63,3 +90,4 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 
 	return false
 }
+*/
