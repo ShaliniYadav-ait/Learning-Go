@@ -15,7 +15,6 @@ func baseConversion(s string, b1 int, b2 int) string {
 		neg = true
 	}
 
-	//for i := n ; i < len(s); i++{
 	for i, val := range s {
 		if i == 0 && neg == true {
 			continue
